@@ -1,0 +1,10 @@
+workflows:
+  conectando-workflow:
+    name: Conectando pipeline
+    scripts:
+      - name: CICD Started
+        script: echo "Welcome to your CICD setup"
+    publishing:
+      email:
+        recipients:
+          - adrian.cano.r9@gmail.com
