@@ -2,8 +2,8 @@
 //  ContentView.swift
 //  SwiftUIStarterKitApp
 //
-//  Created by Osama Naeem on 01/08/2019.
-//  Copyright © 2019 NexThings. All rights reserved.
+//  Created by Adrian on 01/08/2019.
+//  
 //
 
 import SwiftUI
