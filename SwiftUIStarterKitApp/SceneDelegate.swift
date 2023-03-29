@@ -9,7 +9,10 @@
 import UIKit
 import SwiftUI
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+
+class SceneDelegate: UIResponder, UIWindowSceneDelegate, ObservableObject {
+    
+    @Published var tutorialIsActive: Bool = true
 
     var window: UIWindow?
 
@@ -18,14 +21,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
-        // Use a UIHostingController as window root view controller
+        
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             let settings = UserSettings()
-            window.rootViewController = UIHostingController(rootView: TabbarView().environmentObject(settings))
+            
+            if tutorialIsActive {
+                self.tutorialIsActive = false
+
+                window.rootViewController = UIHostingController(rootView: TutorialView().environmentObject(settings))
+                
+            }
+            else{
+                window.rootViewController = UIHostingController(rootView: TabbarView().environmentObject(settings))
+            }
             self.window = window
             window.makeKeyAndVisible()
+            
         }
+        
+        
+        
+        
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

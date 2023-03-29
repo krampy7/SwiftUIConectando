@@ -43,49 +43,49 @@ struct ActivitiesCartView: View {
                     .padding(.leading, 20)
                     .padding(.trailing, 20)
                     HStack {
-                        Text("\(self.ShoppingCartItemsData.ActivitiesCartArray.count) items")
-                            .font(.system(size: 24, weight: .bold, design: .default))
-                            .padding(.leading, 12)
-                            .padding(.top, 8)
-                        Spacer()
-                        Button(action: {
-                            print("Edit Cells")
-                        }){
-                            Text("Edit")
-                        }.foregroundColor(Color.blue)
-                        .padding(.trailing, 12)
-                        .padding(.top, 8)
+                        //Text("\(self.ShoppingCartItemsData.ActivitiesCartArray.count) items")
+                        //    .font(.system(size: 24, weight: .bold, design: .default))
+                        //    .padding(.leading, 12)
+                        //    .padding(.top, 8)
+                        //Spacer()
+                        //Button(action: {
+                        //    print("Edit Cells")
+                        //}){
+                        //    Text("Edit")
+                        //}.foregroundColor(Color.blue)
+                        //.padding(.trailing, 12)
+                        //.padding(.top, 8)
                     }
-                    .navigationBarTitle("Shopping Cart")
+                    .navigationBarTitle("Pagina principal")
                     
                 ScrollView (.vertical, showsIndicators: false) {
                     VStack (alignment: .leading) {
-                        ForEach(self.ShoppingCartItemsData.ActivitiesCartArray, id: \.itemID) { item in
-                            ShoppingCartCellView(shoppingCartItem: item)
-                                .frame(width: geometry.size.width - 24, height: 80)
-                                
-                            }
+                        //ForEach(self.ShoppingCartItemsData.ActivitiesCartArray, id: \.itemID) { item in
+                        //    ShoppingCartCellView(shoppingCartItem: item)
+                        //        .frame(width: geometry.size.width - 24, height: 80)
+                        //
+                        //    }
                     }
                 }
                 .frame(height: 87 * 4)
                 
                 Spacer()
-                ShoppingFinalInfoView(ShoppingCartItemsData: self.ShoppingCartItemsData)
-                Button(action: {
-                    let newelement = ActivitiesCartItem(itemID: String(Int.random(in: 6 ..< 100)), itemName: "DSLR", itemPrice: 500, itemColor: "Black", itemManufacturer: "Nikon", itemImage: "4")
-                        self.ShoppingCartItemsData.ActivitiesCartArray.append(newelement)
-                    }) {
-                        HStack {
-                        Text("Checkout")
-                    }
-                    .padding()
-                    .frame(width: geometry.size.width - 24, height: 40)
-                    .foregroundColor(Color.white)
-                    .background(Color.blue)
-                    .cornerRadius(5)
-                    }
-                    .padding(.top, 10)
-                    .padding(.bottom, 20)
+                //ShoppingFinalInfoView(ShoppingCartItemsData: self.ShoppingCartItemsData)
+                //Button(action: {
+                //    let newelement = ActivitiesCartItem(itemID: String(Int.random(in: 6 ..< 100)), itemName: "DSLR", //itemPrice: 500, itemColor: "Black", itemManufacturer: "Nikon", itemImage: "4")
+                //        self.ShoppingCartItemsData.ActivitiesCartArray.append(newelement)
+                //    }) {
+                //        HStack {
+                //        Text("Checkout")
+                //    }
+                //    .padding()
+                //    .frame(width: geometry.size.width - 24, height: 40)
+                //    .foregroundColor(Color.white)
+                //    .background(Color.blue)
+                //    .cornerRadius(5)
+                //    }
+                //    .padding(.top, 10)
+                //    .padding(.bottom, 20)
           
             }
         }

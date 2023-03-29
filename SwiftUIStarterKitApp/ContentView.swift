@@ -13,6 +13,7 @@ class UserSettings: ObservableObject {
     @Published var loggedIn : Bool = false
     @Published var navigateNowToLogIn: Bool = false
     @Published var navigateNowToSignup: Bool = false
+    @Published var grayColor: Bool = false
 }
 
 struct StartView: View {

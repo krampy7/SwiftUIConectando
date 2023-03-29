@@ -1,14 +1,8 @@
-//
-//  ShopContentView.swift
-//  SwiftUIStarterKitApp
-//
-//  Created by Osama Naeem on 06/08/2019.
-//  Copyright © 2019 NexThings. All rights reserved.
-//
-
+// Se importan las librerias necesarias
 import SwiftUI
 import Combine
 
+// Item de las actividades
 struct ActivitiesItem {
     var id: Int
     var activityName: String
@@ -17,6 +11,7 @@ struct ActivitiesItem {
     var selectedActivity: Bool
 }
 
+// Lugares de las actividades
 struct ActivitiesPlaces {
     var id: Int
     var activityPlace: String
@@ -25,6 +20,7 @@ struct ActivitiesPlaces {
    
 }
 
+// Recurso de los elementos
 struct ActivityResource {
     var id: Int
     var resourceName: String
@@ -32,6 +28,7 @@ struct ActivityResource {
     var resources : [ActivityResourcesItem]
 }
 
+// El recurso de los elementos
 struct ActivityResourcesItem {
     var id: Int
     var resourceName: String
@@ -39,12 +36,14 @@ struct ActivityResourcesItem {
     var resourceDescription: String
 }
 
+// La informacion de las actividades
 struct ActivitiesData {
     var id: Int
     var activitiesPlaces: [ActivitiesPlaces]
     var activityResources: [ActivityResource]
 }
 
+// Puntos destacables
 struct ActivitiesFamousPoints {
     var id: Int
     var pointName: String
@@ -52,6 +51,7 @@ struct ActivitiesFamousPoints {
     var pointDescription: String
 }
 
+// Observable para poder estar mutando elementos en la app
 class Activities: ObservableObject {
     let objectWillChange = PassthroughSubject<Void, Never>()
     
@@ -78,13 +78,15 @@ class ActivitySelected: ObservableObject {
 }
 
 struct ActivitiesContentView: View {
-    @EnvironmentObject var settings: UserSettings
     @ObservedObject var activtiesData : Activities
     @ObservedObject var selectedActivity = ActivitySelected()
     @State var isShowing: Bool = false
     @State var placeItemSelected: ActivitiesPlaces? = nil
     
+    @EnvironmentObject var settings: UserSettings
+    
     var body: some View {
+        
         GeometryReader { g in
             ScrollView{
                     VStack(alignment: .leading) {
@@ -93,6 +95,8 @@ struct ActivitiesContentView: View {
                                 ForEach(self.activtiesData.activities, id: \.id) { item in
                                     ShopPromotionBannerView(activtiesItems: item, selectedActivity: self.selectedActivity)
                                             .frame(width: 120, height: 60)
+                                            .modifier(GrayModifier(shouldGray: self.settings.grayColor))
+                                            
                                 }
                             }.padding(.leading, 30)
                             .padding(.trailing, 30)
@@ -100,7 +104,7 @@ struct ActivitiesContentView: View {
                         }
                         .padding(.top, 20)
                         
-                        Text("\(self.activtiesData.activities[self.selectedActivity.index].activityNameLabel) Regions")
+                        Text("\(self.activtiesData.activities[self.selectedActivity.index].activityNameLabel)")
                             .font(.system(size: 20))
                             .padding(.leading, 30)
                             .padding(.top, 10)
@@ -114,6 +118,7 @@ struct ActivitiesContentView: View {
                                             }) {
                                                 ShopBestSellerViews(activityPlaces: item)
                                                                     .frame(width: 155, height: 225)
+                                                                    .modifier(GrayModifier(shouldGray: self.settings.grayColor))
                                             }
                                         }
                                         
@@ -123,22 +128,27 @@ struct ActivitiesContentView: View {
                                 
                         }
                         
+                        
+                        
                         VStack (spacing: 20) {
                             ForEach(self.activtiesData.activitiesCollection[self.selectedActivity.index].activityResources, id: \.id) { item in
                                 ShopNewProductViews(activityResources: item)
                                          .frame(width: g.size.width - 60, height: g.size.width - 60)
+                                         .modifier(GrayModifier(shouldGray: self.settings.grayColor))
                             }
                         }.padding(.leading, 30)
                         
                         
                     }
-                    .navigationBarTitle("Activities")
+                    .navigationBarTitle("Información")
+                    /*
                     .navigationBarItems(trailing:
                     Button(action: {
                         self.settings.loggedIn = false
                     }) {
-                        Text("Log Out")
+                        Text("Log ")
                     })
+                    */
             }.sheet(isPresented: self.$isShowing) { PlaceDetailView(isShowing: self.$isShowing, placeItem: self.$placeItemSelected)}
         }
     }
@@ -147,6 +157,7 @@ struct ActivitiesContentView: View {
 struct ShopBestSellerViews: View {
     
     var activityPlaces: ActivitiesPlaces
+    @EnvironmentObject var settings: UserSettings
     
     var body: some View {
             ZStack{
@@ -178,6 +189,8 @@ struct ShopBestSellerViews: View {
 struct ShopPromotionBannerView: View {
     var activtiesItems: ActivitiesItem
     @ObservedObject var selectedActivity: ActivitySelected
+    
+    @EnvironmentObject var settings: UserSettings
     
     var body: some View {
         
@@ -211,9 +224,9 @@ struct ShopPromotionBannerView: View {
     }
 }
 
-
 struct ShopNewProductViews: View {
     var activityResources: ActivityResource
+    @EnvironmentObject var settings: UserSettings
     
     var body: some View {
         GeometryReader { g in
@@ -256,6 +269,7 @@ struct ShopNewProductViews: View {
 
 struct ActivityResourceItems: View {
     var resourceItems: ActivityResourcesItem
+    @EnvironmentObject var settings: UserSettings
     var body: some View {
         GeometryReader { g in
             ZStack{

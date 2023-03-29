@@ -1,115 +1,109 @@
-//
-//  ActivitiesMockStore.swift
-//  SwiftUIStarterKitApp
-//
-//  Created by Osama Naeem on 06/08/2019.
-//  Copyright © 2019 NexThings. All rights reserved.
-//
 
 import SwiftUI
 
 class ActivitiesMockStore {
     
     static let activities: [ActivitiesItem] = [
-        ActivitiesItem(id: 0, activityName: "SURFING", activityNameLabel: "Surfing", activityImage: "surfing", selectedActivity: false),
-        ActivitiesItem(id: 1, activityName: "SNOWBOARD", activityNameLabel: "Snowboarding", activityImage: "snowboarding", selectedActivity: false),
-        ActivitiesItem(id: 2, activityName: "HIKING", activityNameLabel: "Hiking", activityImage: "hiking", selectedActivity: false)
-        
+        ActivitiesItem(id: 0, activityName: "SOCIAL", activityNameLabel: "Social", activityImage: "comida3", selectedActivity: false),
+        ActivitiesItem(id: 1, activityName: "TEXTURAS", activityNameLabel: "Texturas", activityImage: "comida", selectedActivity: false),
+        ActivitiesItem(id: 2, activityName: "DÍA A DÍA", activityNameLabel: "Día a día", activityImage: "ataque", selectedActivity: false)
     ]
+    
+    
     
     static let activityData: [ActivitiesData] = [
         
         ActivitiesData(id: 0, activitiesPlaces:
-            [ActivitiesPlaces(id: 0, activityPlace: "Costa Rica", activityPlaceImage: "costarica", famousPointsArray: [ActivitiesFamousPoints(id: 0, pointName: "Tamarindo", pointImage: "tamarindo", pointDescription: "Tamarindo is a town in the Guanacaste Province, on Costa Rica’s Pacific coast. It’s known for beaches with strong surf, like Playa Tamarindo and Playa Langosta. To the north, Playa Grande beach is a major nesting site for huge leatherback turtles, and forms part of Las Baulas National Marine Park"),
+            [ActivitiesPlaces(id: 0, activityPlace: "Indirectas", activityPlaceImage: "comida", famousPointsArray: [ActivitiesFamousPoints(id: 0, pointName: "Hipotético", pointImage: "comida", pointDescription: "Las situaciones hipotéticas no existen dentro de la mente autista. La mayoría de los ejemplos, así como historias pueden llegar a tomarse en cuestiones literales. Es por esto por lo que es mejor el explicar no desde la imaginación sino desde ejemplos prácticos o casos reales."),
                                                                                                                        
-            ActivitiesFamousPoints(id: 1, pointName: "Jaco", pointImage: "jaco", pointDescription: "Jacó is a town on the Pacific coast of Costa Rica, southwest of the capital city, San José. It's known for its surf beaches and nightlife, and as a gateway to national parks. Rocky, gray-sand Jacó Beach is west of town. Southeast, Hermosa Beach has big waves."),
+            ActivitiesFamousPoints(id: 1, pointName: "Relaciones", pointImage: "comida3", pointDescription: "Como todo ser humano, los autistas poseen relaciones familiares, de amistad e incluso de pareja, sin embargo, estas llegan a ser diferentes. Debido a los diferentes tratos que posee el autista. Con cada persona puede relacionarse de manera completamente diferente e incluso con muchas personas puede hacer algo llamado “masking”."),
             
-            ActivitiesFamousPoints(id: 2, pointName: "Dominical", pointImage: "dominical", pointDescription: "Dominical is a beach-front town in Bahía Ballena de Osa District in the province of Puntarenas in Costa Rica, approximately 45 km south of Quepos. It is well known for large, year-round waves and is popular among surfers in Costa Rica. The town began as a small fishing village")
+            ActivitiesFamousPoints(id: 2, pointName: "Literal…", pointImage: "acomodo", pointDescription: "Todos los contextos serán literales, por ello tanto indirectas como situaciones las cuales sean obvias o de sentido común para los autistas no lo será. Esto no refleja que no pueden crear conexiones o relacionar cosas, si no que les es más difícil hacerlo cuando es algo relacionado a constructos sociales.")
             ]),
              
-             ActivitiesPlaces(id: 1, activityPlace: "Bali", activityPlaceImage: "bali", famousPointsArray: [ActivitiesFamousPoints(id: 0, pointName: "Kuta", pointImage: "kuta", pointDescription: "Kuta is a beach and resort area in the south of the island of Bali, Indonesia. One of Bali's first tourist developments, it's best known for its party-centric atmosphere and surfing in the Indian Ocean. Kuta's long, consistent waves make it a popular surf spot, particularly for beginners"),
+             ActivitiesPlaces(id: 1, activityPlace: "Limites", activityPlaceImage: "ataque", famousPointsArray: [ActivitiesFamousPoints(id: 0, pointName: "Físicos", pointImage: "cabmbio", pointDescription: "Aunque a la mayoría de las personas les gusten los abrazos, esto no significa que con todos sea así. Los autistas pueden tener límites muy específicos con cada una de las personas que lo rodea e incluso puede llegar a tener no solo limites, si no necesidades físicas dependiendo la relación que tenga con cada persona, esto también puede estar relacionado a la limpieza."),
              
-                 ActivitiesFamousPoints(id: 1, pointName: "Jimbaran", pointImage: "jimbaran", pointDescription: "Jimbaran Bay has a long beach with calm waters. It's lined with fish restaurants and backed by tropical forest. At its northern end, colorful boats are pulled up by the lively, open-air Kedonganan fish market. Southwest of the bay are Dreamland Beach and Balangan Beach, known for their strong surf waves.")
+                 ActivitiesFamousPoints(id: 1, pointName: "Contexto", pointImage: "comida2", pointDescription: "Para lo que muchas personas les parezca algo incorrecto o poco moral, para los autistas puede no significar gran cosa. Esto debido a que muchos limites los cuales la mayoría de las personas generamos gracias a los contextos sociales, ellos no. Y los crean a partir de experiencias las cuales lastimosamente suelen ser desagradables.")
              ]),
              
-             ActivitiesPlaces(id: 2, activityPlace: "Cape Town", activityPlaceImage: "capetown", famousPointsArray: [ActivitiesFamousPoints(id: 0, pointName: "Muizenberg", pointImage: "muizenberg", pointDescription: "Surfer’s Corner at Muizenberg is a popular learning spot, and is only about a 30-minute drive from the Cape Town city centre. The waves characteristic of this surf spot are gentle, and are ideal under a north-westerly wind direction."),
+             ActivitiesPlaces(id: 2, activityPlace: "Empatía", activityPlaceImage: "comida3", famousPointsArray: [ActivitiesFamousPoints(id: 0, pointName: "No entiendo", pointImage: "capetown", pointDescription: "Muchas de las situaciones sociales no las podrá entender un autista, y esto es completamente normal, debido a que su sentir no puede nacer de situaciones hipotéticas, solo de situaciones empíricas. Todo debió haber sido aprendido con anterioridad o con sustentos. Sin embargo, esto no significa que no posean empatía, y este es una de las principales creencias que han crecido relacionadas a la desinformación."),
                  
-                  ActivitiesFamousPoints(id: 1, pointName: "Long Beach", pointImage: "longbeach", pointDescription: "Long Beach at Kommetjie is just that, a long, sandy beach that’s very popular with surfers. The wave breaks both to the left and the right, which gives ample opportunities for both natural (right-leg dominated surfer) and goofy footers")
+                  ActivitiesFamousPoints(id: 1, pointName: "Emociones", pointImage: "comida4", pointDescription: "Muchas de las situaciones sociales no las podrá entender un autista, y esto es completamente normal, debido a que su sentir no puede nacer de situaciones hipotéticas, solo de situaciones empíricas. Todo debió haber sido aprendido con anterioridad o con sustentos. Sin embargo, esto no significa que no posean empatía, y este es una de las principales creencias que han crecido relacionadas a la desinformación. ")
              ])],
                       
             activityResources:
         
-            [ActivityResource(id: 0, resourceName: "Lifestyle", resourceDescription: "Explore, Fashion, Food, music, art, photography, travel and more!", resources:
-                [ActivityResourcesItem(id: 0, resourceName: "Yoga for Surfers", resourceImage: "yoga", resourceDescription: "Article"),
-                 ActivityResourcesItem(id: 1, resourceName: "Travel for a living", resourceImage: "travel", resourceDescription: "Article"),
-                 ActivityResourcesItem(id: 2, resourceName: "Tropical Green Smoothie", resourceImage: "smoothie", resourceDescription: "Tutorial")]),
+            [ActivityResource(id: 0, resourceName: "¿Cómo ayudar?", resourceDescription: "Que hacer para poder apoyar a una persona autista en estos temas", resources:
+                [ActivityResourcesItem(id: 0, resourceName: "Pregunta si hay muchos estimulos en el lugar", resourceImage: "contexto", resourceDescription: "Article"),
+                 ActivityResourcesItem(id: 1, resourceName: "Pregunta los limites que tiene la persona", resourceImage: "dia", resourceDescription: "Article"),
+                 ActivityResourcesItem(id: 2, resourceName: "Si se encuentra en un ataque debido al ambiente, muevanse a otra zona", resourceImage: "discapacitado3", resourceDescription: "Tutorial")]),
                 
-                ActivityResource(id: 1, resourceName: "Equipment", resourceDescription: "Find your dream gear", resources: [ActivityResourcesItem(id: 1, resourceName: "Boards", resourceImage: "surfboard-1", resourceDescription: ""),
-                     ActivityResourcesItem(id: 2, resourceName: "Boardshorts", resourceImage: "boardshorts", resourceDescription: ""),
-                     ActivityResourcesItem(id: 3, resourceName: "Surfboard Bags", resourceImage: "surfboardbags", resourceDescription: "")]),
+                ActivityResource(id: 1, resourceName: "¿Qué entender?", resourceDescription: "Que cosas debemos entender y reflexionar un poco con respecto a las personas neuro diversas", resources: [ActivityResourcesItem(id: 1, resourceName: "No entenderá indirectas", resourceImage: "dolor", resourceDescription: ""),
+                     ActivityResourcesItem(id: 2, resourceName: "No esperes reacciones especificas", resourceImage: "dolor", resourceDescription: ""),
+                     ActivityResourcesItem(id: 3, resourceName: "Los autistas si tiene empatía", resourceImage: "emociones", resourceDescription: "")]),
                 
-                ActivityResource(id: 2, resourceName: "Training", resourceDescription: "Best surf training resources", resources: [ActivityResourcesItem(id: 1, resourceName: "Surf Core Training", resourceImage: "boardshorts", resourceDescription: "Video"),
-                     ActivityResourcesItem(id: 2, resourceName: "Sri Lanka Surf Camp", resourceImage: "srilankacamp", resourceDescription: "Camp"),
-                     ActivityResourcesItem(id: 3, resourceName: "Surf Photography Training", resourceImage: "surfphoto", resourceDescription: "Photography")])
+                ActivityResource(id: 2, resourceName: "Palabras clave", resourceDescription: "Palabras clave del tema para mejorar la comunicación entre personas dentro del espectro", resources: [ActivityResourcesItem(id: 1, resourceName: "Estímulos", resourceImage: "empatia", resourceDescription: "Video"),
+                     ActivityResourcesItem(id: 2, resourceName: "Contexto", resourceImage: "enfermo", resourceDescription: "Camp"),
+                     ActivityResourcesItem(id: 3, resourceName: "Limites", resourceImage: "entender1", resourceDescription: "Photography")])
                 ]),
        
         ActivitiesData(id: 1, activitiesPlaces: [
         
-            ActivitiesPlaces(id: 1, activityPlace: "Snowbird", activityPlaceImage: "snowbird", famousPointsArray: [ActivitiesFamousPoints(id: 0, pointName: "Snowbird", pointImage: "snowbird", pointDescription: "Just over the mountains to the north, Brighton and Solitude are located in Big Cottonwood Canyon. To the north of these ski and snowboard areas are Park City and Deer Valley, off of Interstate 80")]),
-            ActivitiesPlaces(id: 2, activityPlace: "Cervinia", activityPlaceImage: "italy", famousPointsArray: [ActivitiesFamousPoints(id: 0, pointName: "Cervinia", pointImage: "italy", pointDescription: "Breuil-Cervinia is an Alpine resort in the Valle d’Aosta region of northwest Italy. It’s known for its snow-capped mountains, including the pyramid-shaped Matterhorn. A network of slopes connects Breuil-Cervinia to Swiss resorts like Zermatt,")]),
-            ActivitiesPlaces(id: 3, activityPlace: "Chamonix", activityPlaceImage: "chamonix", famousPointsArray: [ActivitiesFamousPoints(id: 0, pointName: "Chamonix", pointImage: "chamonix", pointDescription: "Chamonix-Mont-Blanc (usually shortened to Chamonix) is a resort area near the junction of France, Switzerland and Italy. At the base of Mont Blanc, the highest summit in the Alps,")])],
+            ActivitiesPlaces(id: 1, activityPlace: "Personas", activityPlaceImage: "esperar", famousPointsArray: [ActivitiesFamousPoints(id: 0, pointName: "Personas", pointImage: "estimulos", pointDescription: "Las personas pueden ocasionar problemas en el aspecto físico. Ya se los fluidos corporales, la textura de la piel o incluso la textura de la ropa que está usando esa persona puede hacer que la persona neurodivergente siente un asco, ansiedad o incluso un dolor el cual puede llevar a ataques de pánico o incluso convulsiones.")]),
+            ActivitiesPlaces(id: 2, activityPlace: "Comida", activityPlaceImage: "estimulostexturas", famousPointsArray: [ActivitiesFamousPoints(id: 0, pointName: "Comida", pointImage: "exigir", pointDescription: "La comida es uno de los temas más importantes que debemos tratar en la neuro diversidad, debido a que una de las principales causas de muerte está relacionadas con enfermedades alimenticias, como la obesidad o incluso la anorexia. Esto debido a que no pueden controlar la cantidad de comida que ingieren, pueden tener una dieta bastante pobre en nutrientes o incluso las texturas de la misma comida les impida ingerirlas.")]),
+            ActivitiesPlaces(id: 3, activityPlace: "Ropa", activityPlaceImage: "fiesta", famousPointsArray: [ActivitiesFamousPoints(id: 0, pointName: "Ropa", pointImage: "fisico", pointDescription: "Aunque parezca poco creíble, la ropa juega un papel fundamental en el día a día de las personas autistas. Puede ser un martirio completo el tener ropa que no sea cómoda debido a la textura, colores o incluso los dibujos o patrones que tenga. Es fundamental para un autista el seleccionar su ropa tomando una serie especifica de criterios.")])],
                       
                       
             activityResources:
        
-           [ActivityResource(id: 0, resourceName: "Lifestyle", resourceDescription: "Explore, Fashion, Food, music, art, photography, travel and more!", resources:
-               [ActivityResourcesItem(id: 0, resourceName: "Peace in Mountains", resourceImage: "mountains", resourceDescription: "Article"),
-                ActivityResourcesItem(id: 1, resourceName: "Travel for a living", resourceImage: "travel", resourceDescription: "Article"),
-                ActivityResourcesItem(id: 2, resourceName: "Mountain top drinks", resourceImage: "drinks", resourceDescription: "Guide")]),
+           [ActivityResource(id: 0, resourceName: "¿Cómo ayudar?", resourceDescription: "Que hacer para poder apoyar a una persona autista en estos temas", resources:
+               [ActivityResourcesItem(id: 0, resourceName: "Comprender si la persona no puede comer ciertas comidas", resourceImage: "hipotetico", resourceDescription: "Article"),
+                ActivityResourcesItem(id: 1, resourceName: "Puedes preguntar las comidas seguras que posee la persona", resourceImage: "indirectas", resourceDescription: "Article"),
+                ActivityResourcesItem(id: 2, resourceName: "No tengas contacto físico con la persona, primero pregunta", resourceImage: "limites", resourceDescription: "Guide")]),
                
-               ActivityResource(id: 1, resourceName: "Equipment", resourceDescription: "Find your dream gear", resources: [ActivityResourcesItem(id: 1, resourceName: "Boards", resourceImage: "snowboards", resourceDescription: ""),
-                    ActivityResourcesItem(id: 2, resourceName: "Goggles", resourceImage: "goggles", resourceDescription: ""),
-                    ActivityResourcesItem(id: 3, resourceName: "Snowboarding boots", resourceImage: "boots", resourceDescription: "")]),
+               ActivityResource(id: 1, resourceName: "¿Qué entender?", resourceDescription: "Que cosas debemos entender y reflexionar un poco con respecto a las personas neuro diversas", resources: [ActivityResourcesItem(id: 1, resourceName: "Hay comidas que no podrá comer", resourceImage: "literal", resourceDescription: ""),
+                    ActivityResourcesItem(id: 2, resourceName: "Hay ropa que puede incomodar a la persona", resourceImage: "luces", resourceDescription: ""),
+                    ActivityResourcesItem(id: 3, resourceName: "La piel, el sudor y cualquier objeto físico puede ocasionar un problema", resourceImage: "nopoder", resourceDescription: "")]),
                
-               ActivityResource(id: 2, resourceName: "Training", resourceDescription: "Best Snowboarding training resources", resources: [ActivityResourcesItem(id: 1, resourceName: "Snowboard Training", resourceImage: "snowboarder", resourceDescription: "Video"),
-                    ActivityResourcesItem(id: 2, resourceName: "Snowboard Resorts Training", resourceImage: "frenchresort", resourceDescription: "Camp"),
-                    ActivityResourcesItem(id: 3, resourceName: "Snowboarding Photography", resourceImage: "snowboardphoto", resourceDescription: "Photography")])
+               ActivityResource(id: 2, resourceName: "Palabras clave", resourceDescription: "Palabras clave del tema para mejorar la comunicación entre personas dentro del espectro", resources: [ActivityResourcesItem(id: 1, resourceName: "Problemas sensoriales", resourceImage: "nopoder2", resourceDescription: "Video"),
+                    ActivityResourcesItem(id: 2, resourceName: "Contacto", resourceImage: "orden", resourceDescription: "Camp"),
+                    ActivityResourcesItem(id: 3, resourceName: "Preferencias", resourceImage: "orden2", resourceDescription: "Photography")])
                ]),
        
        
         ActivitiesData(id: 2, activitiesPlaces: [
         
-            ActivitiesPlaces(id: 1, activityPlace: "Torres del Paine", activityPlaceImage: "torresdelpaine", famousPointsArray: [ActivitiesFamousPoints(id: 0, pointName: "The Fauna Trail", pointImage: "faunatrail", pointDescription: "This trail is a great hiking option for beginner hikers or anyone looking for a quick day trip. While it may be short in distance, it doesn’t fall short on beautiful landscapes and neverending wildlife. On this somewhat secret trail, you’ll spot herds of guanacos grazing, condors flying through the sky, and if you’re lucky"),
+            ActivitiesPlaces(id: 1, activityPlace: "Problemas sensoriales", activityPlaceImage: "paciencia3", famousPointsArray: [ActivitiesFamousPoints(id: 0, pointName: "Luces", pointImage: "paciente", pointDescription: "Todo puede traer problemas sensoriales, desde el contacto físico, comida, ropa e incluso el clima. Por eso es importante saber si la persona se siente cómoda en el espacio que se encuentra."),
             
-                ActivitiesFamousPoints(id: 1, pointName: "Laguna Azul", pointImage: "lagunaazul", pointDescription: "aguna Azul, which literally translate to blue lagoon, is just that – a picturesque blue lake surrounded by massive mountains with jagged snow-covered peaks. Pictures don’t do it justice, making it one place you have to see to believe.")
+                ActivitiesFamousPoints(id: 1, pointName: "Sonidos", pointImage: "preferencia", pointDescription: "No a todas las personas autistas les pasa esto, pero es importante el saberlo. Muchos sonidos molestos, fuertes o incluso constantes puedes afectar el pensar así como el comportamiento de la persona, al punto que puede entrar a un estado de crisis absoluto en el cual puede hacerse daño así mismo. ")
             ]),
             
-            ActivitiesPlaces(id: 2, activityPlace: "Peru", activityPlaceImage: "peru", famousPointsArray: [ActivitiesFamousPoints(id: 0, pointName: "Inca Trail", pointImage: "inca", pointDescription: "One thing’s for sure: you absolutely cannot go to Peru without visiting Machu Picchu, one of the seven ancient Wonders of the World. The classic and most famous way to get there is via the Inca Trail, the trail that the original Incans traversed."),
+            ActivitiesPlaces(id: 2, activityPlace: "Orden", activityPlaceImage: "pregunta", famousPointsArray: [ActivitiesFamousPoints(id: 0, pointName: "Gustos específicos", pointImage: "problemas", pointDescription: "Esta es una de las características que más se refleja en menores de edad, muchas personas a temprana edad juegan a partir del orden. Ya sea organizando por tamaño, color o categoría, pero esto deja de ser un simple juego en la vida adulta. Muchas de las ocasiones es necesario tener un orden para poder iniciar, seguir o incluso terminar una tarea."),
                 
-                ActivitiesFamousPoints(id: 1, pointName: "Santa Cruz Trek", pointImage: "santacruz", pointDescription: "The Santa Cruz trek in Peru’s Huascarán National Park in the Cordillera Blanca mountain range is considered by many experienced hikers to be one of the most beautiful in the world, seriously! The entire hike is framed by dramatic mountains, glaciers, and deeply blue lakes.")
+                ActivitiesFamousPoints(id: 1, pointName: "Acomodo de las cosas", pointImage: "problemas2", pointDescription: "En ocasiones las listas son un recurso necesario para la vida de un autista. Sin estas, pueden sentirse perdidos, en un espacio en el cual no solo se sientan inseguros, si no que no podrán hacer nada durante el día al menos que conozcan a detalles que es lo que harán a determinada hora.")
             
             ]),
-            ActivitiesPlaces(id: 3, activityPlace: "Grand Canyon", activityPlaceImage: "grandcanyon", famousPointsArray: [ActivitiesFamousPoints(id: 0, pointName: "South Rim Trail", pointImage: "southrim", pointDescription: "For many visitors, the South Rim Trail is where they first lay eyes on the Grand Canyon. It's an experience not easily forgotten, and the viewpoints are plenty. With minimal elevation change and interpretive information along the way, this 13-mile paved route is lined with shuttle stops"),
+            ActivitiesPlaces(id: 3, activityPlace: "El trastorno", activityPlaceImage: "relaciones", famousPointsArray: [ActivitiesFamousPoints(id: 0, pointName: "No hay una cura", pointImage: "ropa", pointDescription: "No existe una cura debido a que no es una enfermedad. El termino de espectro o trastorno no recae meramente en una enfermedad. Si no que se encuentra más ligada a cuestiones como la discapacidad o una diversidad diferente a la típica."),
                   
-                ActivitiesFamousPoints(id: 1, pointName: "Bright Angel Trail", pointImage: "brightangel", pointDescription: "An iconic hiking trail of America, the Bright Angel Trail descends steeply from the South Rim of the Grand Canyon, revealing fantastic views that cannot be experienced from the rim. Descending over 4,000 feet in nine miles between the South Rim and the Colorado River.")
+                ActivitiesFamousPoints(id: 1, pointName: "Adaptarse", pointImage: "ropapeluda", pointDescription: "Los cambios pueden ser sumamente difíciles para las personas autistas. Algo que una persona neurotípica puede entender y modificar en cuestión de minutos un autista puede llegar a tardar días en procesar todo lo que ocurre a su alrededor. Desde emociones, costumbre o hasta comportamientos sociales están ligados a esto.  ")
 
             ])],
                       
                       
             activityResources:
        
-           [ActivityResource(id: 0, resourceName: "Lifestyle", resourceDescription: "Explore, Fashion, Food, music, art, photography, travel and more!", resources:
-               [ActivityResourcesItem(id: 0, resourceName: "Clearing your thoughts", resourceImage: "hikingmental", resourceDescription: "Article"),
-                ActivityResourcesItem(id: 1, resourceName: "Hiking and physical benefits", resourceImage: "hiker", resourceDescription: "Article"),
-                ActivityResourcesItem(id: 2, resourceName: "Hikers Parties", resourceImage: "hikersparties", resourceDescription: "Fun")]),
+           [ActivityResource(id: 0, resourceName: "¿Cómo ayudar?", resourceDescription: "Que hacer para poder apoyar a una persona autista en estos temas", resources:
+               [ActivityResourcesItem(id: 0, resourceName: "No exijas cambios instantáneos", resourceImage: "saludocontacto", resourceDescription: "Article"),
+                ActivityResourcesItem(id: 1, resourceName: "Se paciente con el entendimiento de los cambios", resourceImage: "capetown", resourceDescription: "Article"),
+                ActivityResourcesItem(id: 2, resourceName: "Entiende que hay cosas que no pueden hacer", resourceImage: "saludocontacto", resourceDescription: "Fun")]),
                
-               ActivityResource(id: 1, resourceName: "Equipment", resourceDescription: "Find your dream gear", resources: [ActivityResourcesItem(id: 1, resourceName: "Footwear", resourceImage: "shoes", resourceDescription: ""),
-                    ActivityResourcesItem(id: 2, resourceName: "Camping Equipment", resourceImage: "camping", resourceDescription: ""),
-                    ActivityResourcesItem(id: 3, resourceName: "Hiking bags", resourceImage: "bags", resourceDescription: "")]),
+               ActivityResource(id: 1, resourceName: "¿Qué entender?", resourceDescription: "Que cosas debemos entender y reflexionar un poco con respecto a las personas neuro diversas", resources: [ActivityResourcesItem(id: 1, resourceName: "Hay lugares en los que no pueden estar", resourceImage: "saludocontacto", resourceDescription: ""),
+                    ActivityResourcesItem(id: 2, resourceName: "No tienen las mismas capacidades que tú", resourceImage: "saludocontacto", resourceDescription: ""),
+                    ActivityResourcesItem(id: 3, resourceName: "Es una discapacidad", resourceImage: "saludocontacto", resourceDescription: "")]),
                
-               ActivityResource(id: 2, resourceName: "Photography", resourceDescription: "Best landscape photography resources", resources: [ActivityResourcesItem(id: 1, resourceName: "Camera equipment", resourceImage: "cameras", resourceDescription: "Video"),
-                    ActivityResourcesItem(id: 2, resourceName: "Long exposure photography", resourceImage: "longexposure", resourceDescription: "Tutorial"),
-                    ActivityResourcesItem(id: 3, resourceName: "Tips for best photography", resourceImage: "photography", resourceDescription: "Photography")])
+               ActivityResource(id: 2, resourceName: "Palabras clave", resourceDescription: "Palabras clave del tema para mejorar la comunicación entre personas dentro del espectro", resources: [ActivityResourcesItem(id: 1, resourceName: "Discapacidad", resourceImage: "saludocontacto", resourceDescription: "Video"),
+                    ActivityResourcesItem(id: 2, resourceName: "Paciencia", resourceImage: "ropapeluda", resourceDescription: "Tutorial"),
+                    ActivityResourcesItem(id: 3, resourceName: "Los cambios son dolorosos", resourceImage: "ropapeluda", resourceDescription: "Photography")])
                ])
        
     ]
