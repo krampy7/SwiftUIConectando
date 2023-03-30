@@ -25,9 +25,9 @@ struct TutorialView: View {
                         
                         
                         Button("Sí") {
-                            print(self.settings.grayColor)
+                            //print(self.settings.grayColor)
                             self.settings.grayColor = true
-                            print(self.settings.grayColor)
+                            //print(self.settings.grayColor)
                             readyStart()
                                     }
                                     .foregroundColor(.white)

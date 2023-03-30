@@ -6,7 +6,15 @@ struct TabbarView: View {
     @State private var selectionIndex = 1
     @EnvironmentObject var settings: UserSettings
     
+    
     var body: some View {
+        
+        let accentColor = Color(
+                    UIColor {
+                        $0.userInterfaceStyle == .dark ? .white : .black
+                    }
+                )
+        
         TabView(selection: $selectionIndex) {
             
             // INFORMACION VISTA
@@ -36,20 +44,20 @@ struct TabbarView: View {
             
             // COMUNICACION VISTA
             NavigationView {
-                     AccountView()
-                  }
-                   .tag(2)
-                    .tabItem {
-                    //Image("profile-glyph-icon")
-                    Image(systemName: "mic")
-                    Text("Dilo!")
-                }
+                AccountView()
+            }
+            .tag(2)
+            .tabItem {
+                //Image("profile-glyph-icon")
+                Image(systemName: "mic")
+                Text("Dilo!")
+            }
         }
         .onAppear {
             selectionIndex = 1
         }
+        .accentColor(accentColor)
     }
+    
+    
 }
-
-
-

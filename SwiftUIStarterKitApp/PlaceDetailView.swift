@@ -19,16 +19,19 @@ struct PlaceDetailView : View {
     let defaultPoint = ActivitiesFamousPoints(id: 0, pointName: "Default", pointImage: "Default PlaceHolder", pointDescription: "Default Description PlaceHolder")
     
     @ObservedObject var selectedPoint = SelectedPoint()
+    @EnvironmentObject var settings: UserSettings
     
     var body: some View {
         GeometryReader { g in
             ZStack {
                 Image(self.placeItem?.famousPointsArray[self.selectedPoint.selectedIndex].pointImage ?? "")
                     .resizable()
+                    .scaledToFill()
                     .frame(width: g.size.width, height: g.size.height)
-                    .aspectRatio(contentMode: .fit)
                     .opacity(0.3)
                     .background(Color.black)
+                    .modifier(GrayModifier(shouldGray: self.settings.grayColor))
+                    //.aspectRatio(contentMode: .fit)
                     .onDisappear {
                         self.isShowing = false
                 }
@@ -57,6 +60,8 @@ struct PlaceDetailView : View {
                                     PlacesCircleView(placeItems: item, selectedPoint: self.selectedPoint)
                                 }
                             }.frame(width: g.size.width, height: 130)
+                                .modifier(GrayModifier(shouldGray: self.settings.grayColor))
+                                    
                         }
                     }.padding(.bottom, 50)
                     
@@ -79,9 +84,11 @@ struct PlacesCircleView: View {
                 ZStack {
                     Image(self.placeItems.pointImage).renderingMode(.original)
                         .resizable()
+                        .scaledToFill()
                         .frame(width: 110, height: 110)
                         .background(Color.red)
                         .clipShape(Circle())
+                    
                     
                     if (self.selectedPoint.selectedIndex == self.placeItems.id) {
                            Text("✓")

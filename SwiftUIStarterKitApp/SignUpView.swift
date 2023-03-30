@@ -34,7 +34,7 @@ struct SignUpView: View {
                 .padding(.bottom, 50)
             
             Button(action: {
-                print("Add photo")
+                //print("Add photo")
             }) {
                 VStack(alignment: .center) {
                     Text("+")
@@ -102,7 +102,7 @@ struct SignUpView: View {
             }.padding(.bottom, 40)
 
             Button(action: {
-                        print("Sign up using Facebook Instead")
+                        //print("Sign up using Facebook Instead")
                     }) {
                         HStack {
                             Image("f_logo_RGB-Blue_58")

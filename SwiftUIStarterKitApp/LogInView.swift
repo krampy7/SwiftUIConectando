@@ -66,7 +66,7 @@ struct LogInView: View {
                 Divider()
                 
                 Button(action: {
-                        print("Take to forget password VC")
+                        //print("Take to forget password VC")
                         }) {
                         Text("Forgot your password?")
                 }

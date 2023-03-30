@@ -113,11 +113,13 @@ struct ActivitiesContentView: View {
                                     HStack (spacing: 10) {
                                         ForEach(self.activtiesData.activitiesCollection[self.selectedActivity.index].activitiesPlaces, id: \.id) { item in
                                             Button(action: {
+                                                //print("Clicked")
                                                 self.placeItemSelected = item
                                                 self.isShowing = true
                                             }) {
                                                 ShopBestSellerViews(activityPlaces: item)
                                                                     .frame(width: 155, height: 225)
+                                                                    .cornerRadius(10)
                                                                     .modifier(GrayModifier(shouldGray: self.settings.grayColor))
                                             }
                                         }
@@ -163,6 +165,7 @@ struct ShopBestSellerViews: View {
             ZStack{
                 Image("\(activityPlaces.activityPlaceImage)").renderingMode(.original)
                         .resizable()
+                        .scaledToFill()
                         .frame(width: 155, height: 225)
                         .background(Color.black)
                         .cornerRadius(10)

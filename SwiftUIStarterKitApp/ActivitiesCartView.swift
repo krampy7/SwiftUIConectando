@@ -36,40 +36,52 @@ struct ActivitiesCartView: View {
     
     @ObservedObject var ShoppingCartItemsData : ActivitiesCart
     
+    @State var searchText = ""
+    @State var isSearching = false
+    
     var body: some View {
+        
         GeometryReader { geometry in
             VStack {
                 Divider()
                     .padding(.leading, 20)
                     .padding(.trailing, 20)
                     HStack {
-                        //Text("\(self.ShoppingCartItemsData.ActivitiesCartArray.count) items")
-                        //    .font(.system(size: 24, weight: .bold, design: .default))
-                        //    .padding(.leading, 12)
-                        //    .padding(.top, 8)
-                        //Spacer()
-                        //Button(action: {
-                        //    print("Edit Cells")
-                        //}){
-                        //    Text("Edit")
-                        //}.foregroundColor(Color.blue)
-                        //.padding(.trailing, 12)
-                        //.padding(.top, 8)
+                        
+                        NavigationView{
+                        
+                            ScrollView{
+                        
+                                SearchBar(searchText: $searchText, isSearching: $isSearching)
+                        
+                                ForEach((0..<20).filter({ "\($0)".contains(searchText) || searchText.isEmpty }), id: \.self){ num in
+                                    HStack{
+                                        Text("\(num)")
+                                        Spacer()
+                                    }.padding()
+                                    Divider()
+                                        .background(Color(.systemGray4))
+                                        .padding(.leading)
+                                }
+                            }
+                            .navigationTitle("Urgente")
+                        }
+                        
                     }
-                    .navigationBarTitle("Pagina principal")
+                    //.navigationBarTitle("Urgente")
                     
-                ScrollView (.vertical, showsIndicators: false) {
-                    VStack (alignment: .leading) {
+//                ScrollView (.vertical, showsIndicators: false) {
+//                    VStack (alignment: .leading) {
                         //ForEach(self.ShoppingCartItemsData.ActivitiesCartArray, id: \.itemID) { item in
                         //    ShoppingCartCellView(shoppingCartItem: item)
                         //        .frame(width: geometry.size.width - 24, height: 80)
                         //
                         //    }
-                    }
-                }
-                .frame(height: 87 * 4)
-                
-                Spacer()
+//                    }
+//                }
+//                .frame(height: 87 * 4)
+//
+//                Spacer()
                 //ShoppingFinalInfoView(ShoppingCartItemsData: self.ShoppingCartItemsData)
                 //Button(action: {
                 //    let newelement = ActivitiesCartItem(itemID: String(Int.random(in: 6 ..< 100)), itemName: "DSLR", //itemPrice: 500, itemColor: "Black", itemManufacturer: "Nikon", itemImage: "4")
@@ -88,6 +100,79 @@ struct ActivitiesCartView: View {
                 //    .padding(.bottom, 20)
           
             }
+        }
+    }
+}
+
+
+
+//NavigationView{
+//
+//    ScrollView{
+//
+//        SearchBar(searchText: $searchText, isSearching: $isSearching)
+//
+//        ForEach((0..<20).filter({ "\($0)".contains(searchText) || searchText.isEmpty }), id: \.self){ num in
+//            HStack{
+//                Text("\(num)")
+//                Spacer()
+//            }.padding()
+//            Divider()
+//                .background(Color(.systemGray4))
+//                .padding(.leading)
+//        }
+//    }
+//    .navigationTitle("Expresiones")
+//}
+
+struct SearchBar: View {
+    
+    @Binding var searchText: String
+    @Binding var isSearching: Bool
+
+    var body: some View {
+        HStack{
+            HStack{
+                TextField("Search", text: $searchText)
+                    .padding(.leading, 24)
+            }
+            .padding()
+            .background(Color(.systemGray5))
+            .cornerRadius(6)
+            .padding(.horizontal)
+            .onTapGesture(perform: {
+                isSearching = true
+            })
+            .overlay(
+                HStack{
+                    Image(systemName: "magnifyingglass")
+                    Spacer()
+                    if isSearching {
+                        Button(action: { searchText = "" }, label: {
+                            Image(systemName: "xmark.circle.fill")
+                                .padding(.vertical)
+                        })
+                    }
+                }
+                    .padding(.horizontal, 32)
+                    .foregroundColor(.gray)
+            )
+            if isSearching {
+                Button(action: {
+                    isSearching = false
+                    searchText = ""
+                    
+                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                    
+                }, label: {
+                    Text("Cancelar")
+                        .padding(.trailing)
+                        .padding(.leading, 0)
+                })
+                .transition(.move(edge: .trailing))
+                .animation(.spring(), value: true)
+            }
+            
         }
     }
 }
